@@ -1,3 +1,4 @@
+/* Existing styles */
 body {
   background-color: #f2f2f2;
   font-family: "Courier New", monospace;
@@ -9,6 +10,38 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+}
+
+/* Updated styles */
+.intro {
+  display: flex;
+  flex-direction: row;
+}
+
+.presentation {
+  margin-top: 20px;
+  text-align: center; /* Center align the iframe */
+}
+
+.presentation iframe {
+  border: 1px solid #ccc;
+}
+
+.intro-text {
+  flex: 0.9; /* 70% of the div */
+  margin-right: 100px;
+}
+
+.intro-pic {
+  flex: 0.1; /* 30% of the div */
+  max-width: 140px; /* Limiting the width */
+  margin-left: auto; /* Align to the right */
+}
+
+.github-logo {
+  width: 16px;
+  height: auto;
+  vertical-align: middle;
 }
 
 .project {

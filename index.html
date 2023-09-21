@@ -5,26 +5,98 @@
     <title>Dima Yanovsky Dev Day Application</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <bodygit>
     <div class="container">
-      <h1>My Projects</h1>
+    <div class="intro">
+    <div class="intro-text">
 
+      <h1>Dima Yanovsky's OpenAI DevDay Application </h1>
+      <br>
+      <p>My name is Dima, I'm a junior studying CS at MIT. I've been developing with OpenAI's API for >1 yr. now. I use it both for my projects at MIT, my industry internships
+        and non-profit projects. 
+      </p>
+    </div>  
+    <img class="intro-pic" src="./image.jpg" >
+    <br>
+    </div>
+    <br>
+    <br>
+    <h2>Developing with LLMs</h2>
+    <br>  
       <!-- Project 1 -->
       <div class="project">
-        <h2>Project 1</h2>
-        <p>Description for project 1.</p>
-        <a href="https://github.com/username/project1" target="_blank"
-          >GitHub Repo</a
-        >
+        <h2>Slack Knowledgebot for <a href="https://pulley.com" target="_blank">Pulley</a> (YC20)</h2>
+        <p>A slackbot that accepts users' queties about the company and responds using relevant slack history as a context.</p>
+        <ul>
+            <li>Used GPT-3.5 to turn raw slack thread history into a set of questions and created vector embeddings for (using ada-2) those questions. </li>
+            <li>Used GPT-4 functions API feature to fill parameters to query Pinecone with (before and after timestamp, channel name)    </li>
+            <li>Is actively used across all teams at Pulley (65 people, 10+ questions daily). Already saved hundreds of hours for Pulley.</li>
+          </ul>
+        
+          <a href="https://github.com/yanovsk/slack-knowledge-bot" target="_blank"><img src="github-mark.svg" alt="GitHub Logo" class="github-logo">GitHub Repo</a>
+
       </div>
 
       <!-- Project 2 -->
       <div class="project">
-        <h2>Project 2</h2>
-        <p>Description for project 2.</p>
+        <h2>Codebase Semantic Search (R&D for Pulley)</h2>
+        <p>Build and internal semantic code search using GPT-4 and Vector Embeddings. </p>
+        <ul>
+
+
+        <li>Split the codebase and for each chunk of code use GPT-3.5 to describe its intent and embed this description.
+             Include all functions called from inside this code element.</li>
+        <li>Codebase is split using three scopes (low: by functions/methods, mid: by files, high: by packages). GPT-4-32k is then used to create a description and 
+            Q&A of each scope, where higher scope is injected as a context. So, if GPT is asked to describe the code of the function, the file of this function is injected
+            as a context  
+        </li>
+        <li>Chunks are turned to vector embeddings using ada-2. After top-k relevant chunks are returned from vector db we inject their code and the code of the functions 
+            called from inside them to GPT-4-32k to give a more detailed context to answer the question.
+        </li>
+        </li>
+    </ul>
+
+    <a href="https://github.com/yanovsk/llm-codesearch" target="_blank"><img src="github-mark.svg" alt="GitHub Logo" class="github-logo">GitHub Repo</a>
+
+    
+</div>
+<h2>Bringing LLMs to the community</h2>
+</br>
+
+
+      <div class="project">
+        <h2>Teaching Ukranian teens about GPT</h2>
+        <p>Founded a  <a href="https://ultacademy.org" target="_blank">tutition-free educational program ULTA</a>  focused on AI and GPT technologies for talented Ukrainian youth. After a competitive selection process, only 20 finalists were chosen from a pool of 725 applicants. These finalists underwent a two-week intensive course covering foundational and advanced aspects of AI and GPT. Upon course completion, participants were paired with mentors from MIT to further deepen their understanding and prepare them for a career in AI.</p>
+        <a href="https://ultacademy.org" target="_blank">ultacademy.org</a> 
+        <div class="presentation">
+            <embed src="./ulta.pdf" type="application/pdf" width="600" height="400"></embed>
+          </div>
+      </div>
+      <div class="project">
+        <h2>LLMs for financial modeling and legal documents competition at MIT (Winter 2024)</h2>
+        <p>Currenlty working on developing a month-long program for MIT students to develop proof-of-concepts for their ideas on how LLMs 
+            can be used for financial modeling and interaction with legal documents. Program is sponsored by Pulley (YC20).
+        </p>
+
+      </div>
+
+<h2>LLMs at MIT</h2>
+
+      <div class="project">
+        <h2>Reimagining social media with generative AI for MIT 6.1040 </h2>
+        As part of MIT 6.1040 course, I'm developing a social media application called "Sapiens," designed to optimize the learning experience of knowledge-seeking adults. The application leverages Language Models and Generative AI to offer features such as natural language-based feed personalization, interactive post and video discussions, and real-time terminology lookup. Additional functionalities include AI-assisted post writing, misinformation flagging, and personalized daily learning statistics to offer users a tailored and efficient way to consume and engage with content.
+
         <a href="https://github.com/username/project2" target="_blank"
-          >GitHub Repo</a
+          >Project link</a
         >
+      </div>
+
+      <div class="project">
+        <h2>Talk about building a natural language code search with GPT-4 and Embeddings. </h2>
+        <p>As a part of 6.UAT course a gave a techical talk to MIT undergrads on my progress with building a language code search with GPT-4 and Vector Embeddings. Slides:</p>
+        <div class="presentation">
+            <embed src="./presentation.pdf" type="application/pdf" width="600" height="400"></embed>
+          </div>
       </div>
     </div>
   </body>
